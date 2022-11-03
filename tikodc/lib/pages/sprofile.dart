@@ -10,7 +10,7 @@ class UserProfilePage extends StatelessWidget {
       length: 3,
       child: Scaffold(
         appBar: AppBar(
-          title: Text('Mitch Koko', style: TextStyle(color: Colors.black)),
+          title: Text('Sekou DIAKITE', style: TextStyle(color: Colors.black)),
           backgroundColor: Colors.transparent,
           elevation: 0,
           leading: Icon(Icons.person_add, color: Colors.black),
@@ -29,6 +29,10 @@ class UserProfilePage extends StatelessWidget {
           children: [
             // profile photo
             Container(
+              child: const CircleAvatar(
+                              radius: 25,
+                              backgroundImage: AssetImage('images/photo-5.JPG'),
+                            ),
               height: 120,
               width: 120,
               decoration: BoxDecoration(
@@ -41,7 +45,7 @@ class UserProfilePage extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.all(20.0),
               child: Text(
-                '@createdbykoko',
+                '@dsekou166',
                 style: TextStyle(color: Colors.black, fontSize: 20),
               ),
             ),
@@ -129,7 +133,7 @@ class UserProfilePage extends StatelessWidget {
               children: [
                 Container(
                   padding: EdgeInsets.symmetric(vertical: 15, horizontal: 40),
-                  child: Text('Edit profile',
+                  child: Text('Modifier',
                       style: TextStyle(color: Colors.black, fontSize: 20)),
                   decoration: BoxDecoration(
                       border: Border.all(color: Colors.grey.shade300),
@@ -176,7 +180,7 @@ class UserProfilePage extends StatelessWidget {
                   icon: Icon(Icons.grid_3x3, color: Colors.black),
                 ),
                 Tab(
-                  icon: Icon(Icons.favorite, color: Colors.black),
+                  icon: Icon(Icons.favorite, color: Colors.red),
                 ),
                 Tab(
                   icon: Icon(Icons.lock_outline_rounded, color: Colors.black),

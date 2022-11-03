@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:carousel_slider/carousel_slider.dart';
-import 'package:tikodc/pages/inbox.dart';
-import 'package:tikodc/pages/plus.dart';
+import 'package:tikodc/pages/inscription.dart';
+import 'package:tikodc/pages/now.dart';
+import 'package:tikodc/pages/add.dart';
 import 'package:tikodc/pages/sprofile.dart';
-import 'package:tikodc/pages/search.dart';
+import 'package:tikodc/pages/notification.dart';
 import 'package:video_player/video_player.dart';
 import 'dart:math' as math;
 
@@ -18,7 +19,7 @@ class MyApp extends StatelessWidget {
     return const MaterialApp(
       title: 'Flutter TikTok',
       debugShowCheckedModeBanner: false,
-      home: MyStatefulWidget(),
+      home: MonInscrp(),
     );
   }
 }
@@ -55,22 +56,22 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
         items: <BottomNavigationBarItem>[
           const BottomNavigationBarItem(
             icon: Icon(Icons.home),
-            label: 'Home',
+            label: 'Accueil',
           ),
           const BottomNavigationBarItem(
-            icon: Icon(Icons.search),
-            label: 'Search',
+            icon: Icon(Icons.flash_on),
+            label: 'Now',
           ),
           BottomNavigationBarItem(
             icon: Image.asset(
               'images/tiktok_add.png',
-              height: 25,
+              height: 35,
             ),
-            label: 'Add',
+            label: '',
           ),
           const BottomNavigationBarItem(
             icon: Icon(Icons.comment_outlined),
-            label: 'Comment',
+            label: 'Notification',
           ),
           const BottomNavigationBarItem(
             icon: Icon(Icons.person_outline),
@@ -82,8 +83,8 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
         backgroundColor: const Color(0xFF141518),
         selectedItemColor: Colors.white,
         unselectedItemColor: Colors.grey,
-        showSelectedLabels: false,
-        showUnselectedLabels: false,
+        showSelectedLabels: true,
+        showUnselectedLabels: true,
         onTap: _onItemTapped,
       ),
     );
@@ -157,7 +158,7 @@ class _VideoWidgetState extends State<VideoWidget> {
     super.initState();
     _controller = VideoPlayerController.asset(videoUrl)
       ..initialize().then((_) {
-        _controller.setLooping(true);
+        _controller.setLooping(false);
         _controller.play();
         setState(() {});
       });
@@ -183,7 +184,7 @@ class PostContent extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: const [
               Text(
-                'Following',
+                'Suivis',
                 style: TextStyle(
                   color: Colors.white54,
                   fontWeight: FontWeight.w600,
@@ -191,7 +192,7 @@ class PostContent extends StatelessWidget {
               ),
               SizedBox(width: 20),
               Text(
-                'For you',
+                'Pour toi',
                 style: TextStyle(
                   color: Colors.white,
                   fontWeight: FontWeight.w600,
@@ -260,8 +261,7 @@ class PostContent extends StatelessWidget {
                             margin: const EdgeInsets.only(bottom: 10),
                             child: const CircleAvatar(
                               radius: 25,
-                              backgroundImage:
-                                  AssetImage('images/photo-5.jpeg'),
+                              backgroundImage: AssetImage('images/photo-5.JPG'),
                             ),
                           ),
                           Container(
@@ -286,7 +286,7 @@ class PostContent extends StatelessWidget {
                         children: [
                           Icon(
                             Icons.favorite,
-                            color: Colors.white.withOpacity(0.85),
+                            color: Colors.red.withOpacity(0.85),
                             size: 45,
                           ),
                           const Text(
@@ -372,6 +372,7 @@ class _AnimatedLogoState extends State<AnimatedLogo>
     _controller.repeat();
     super.initState();
   }
+
   @override
   void dispose() {
     _controller.dispose();
@@ -403,4 +404,3 @@ class _AnimatedLogoState extends State<AnimatedLogo>
     );
   }
 }
-

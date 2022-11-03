@@ -39,16 +39,17 @@ dependencies:
   carousel_slider: ^4.1.1
   video_player: ^2.4.7
   flutter_native_splash: ^2.2.13
+  font_awesome_flutter: ^10.2.1
 
 
 
 flutter_native_splash:
  color: '#000000'
- image: images/image3.png
+ image: images/image.png
 
  android_12:
     icon_background_color: "#000000"
-    image: images/image3.png
+    image: images/image.png
  
 
 
