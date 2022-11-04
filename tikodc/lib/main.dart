@@ -1,3 +1,4 @@
+import 'package:camera/camera.dart';
 import 'package:flutter/material.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:tikodc/pages/inscription.dart';
@@ -6,9 +7,13 @@ import 'package:tikodc/pages/add.dart';
 import 'package:tikodc/pages/sprofile.dart';
 import 'package:tikodc/pages/notification.dart';
 import 'package:video_player/video_player.dart';
+
 import 'dart:math' as math;
 
-void main() {
+late List<CameraDescription> cameras;
+Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  cameras = await availableCameras();
   runApp(const MyApp());
 }
 
@@ -43,7 +48,7 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
   final List<Widget> _pages = [
     HomePage(),
     UserInboxPage(),
-    UserPlusPage(),
+    Addvideo(),
     UserSearchPage(),
     UserProfilePage(),
   ];
