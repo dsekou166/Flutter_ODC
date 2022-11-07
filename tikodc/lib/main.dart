@@ -24,7 +24,7 @@ class MyApp extends StatelessWidget {
     return const MaterialApp(
       title: 'Flutter TikTok',
       debugShowCheckedModeBanner: false,
-      home: MonInscrp(),
+      home: MyStatefulWidget(),
     );
   }
 }
@@ -47,10 +47,10 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
 
   final List<Widget> _pages = [
     HomePage(),
-    UserInboxPage(),
+    createnewpassword(),
     Addvideo(),
-    UserSearchPage(),
     UserProfilePage(),
+    UserProfilPage(),
   ];
 
   @override
