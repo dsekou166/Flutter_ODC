@@ -125,7 +125,7 @@ void _openPopup(context) {
                       ],
                     ),
                     Text(
-                      "Mot de passe enregistré!!!!!!!!!!!!!!!",
+                      "Mot de passe modifier avec succès !",
                       style: TextStyle(
                         fontSize: 30,
                         color: Colors.redAccent,
